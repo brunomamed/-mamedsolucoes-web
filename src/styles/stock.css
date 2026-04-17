@@ -1,0 +1,124 @@
+.stock-container {
+  padding: var(--spacing-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.stock-header h1 {
+  color: var(--color-foreground);
+}
+
+.stock-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+}
+
+.stat-label {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.stat-value.error {
+  color: var(--color-error);
+}
+
+.stat-value.warning {
+  color: var(--color-warning);
+}
+
+.stock-filters {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.filter-input,
+.filter-select {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(10, 126, 164, 0.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.empty-state p {
+  color: var(--color-muted);
+  font-size: var(--font-size-lg);
+}
+
+.stock-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-background);
+}
+
+.stock-table thead {
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.stock-table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-foreground);
+  font-size: var(--font-size-sm);
+}
+
+.stock-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  font-size: var(--font-size-sm);
+}
+
+.stock-table tbody tr:hover {
+  background-color: var(--color-surface);
+}

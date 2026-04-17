@@ -1,0 +1,187 @@
+.home-container {
+  padding: var(--spacing-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.home-header h1 {
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-sm);
+}
+
+.home-header p {
+  color: var(--color-muted);
+}
+
+.home-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--color-muted);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+}
+
+.stat-label {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.stat-value.pending {
+  color: var(--color-warning);
+}
+
+.stat-value.inProgress {
+  color: var(--color-primary);
+}
+
+.stat-value.completed {
+  color: var(--color-success);
+}
+
+/* Actions Section */
+.actions-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.action-button.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.action-button.primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
+}
+
+.action-button.secondary {
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+}
+
+.action-button.secondary:hover {
+  background-color: var(--color-border);
+}
+
+/* Recent Orders */
+.recent-orders {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+}
+
+.recent-orders h2 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-foreground);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-muted);
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.order-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(10, 126, 164, 0.1);
+}
+
+.order-number {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.order-client {
+  color: var(--color-foreground);
+}
+
+.order-status {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.order-status.pending {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.order-status.in_progress {
+  background-color: rgba(10, 126, 164, 0.1);
+  color: var(--color-primary);
+}
+
+.order-status.completed {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+}
+
+.order-status.waiting_part {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+}

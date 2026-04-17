@@ -1,0 +1,95 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: var(--spacing-md);
+}
+
+.login-card {
+  background: var(--color-background);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-2xl);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.login-header h1 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.login-header p {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground);
+}
+
+.form-group input {
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+}
+
+.form-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  border-left: 4px solid var(--color-error);
+}
+
+.login-button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
