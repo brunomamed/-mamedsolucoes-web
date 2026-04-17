@@ -5,6 +5,7 @@ import { HomePage } from '@/pages/HomePage';
 import { OrdersPage } from '@/pages/OrdersPage';
 import { StockPage } from '@/pages/StockPage';
 import { PartsPage } from '@/pages/PartsPage';
+import { ReportsPage } from '@/pages/ReportsPage';
 import { Header } from '@/components/Header';
 import './styles/index.css';
 import './styles/header.css';
@@ -12,6 +13,8 @@ import './styles/stock.css';
 import './styles/parts.css';
 import './styles/login.css';
 import './styles/home.css';
+import './styles/reports.css';
+import './styles/notifications.css';
 
 function AppLayout() {
   const { isAuthenticated } = useAuth();
@@ -85,6 +88,16 @@ export function App() {
             <ProtectedRoute>
               <div style={{ paddingTop: '60px' }}>
                 <PartsPage />
+              </div>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/reports"
+          element={
+            <ProtectedRoute>
+              <div style={{ paddingTop: '60px' }}>
+                <ReportsPage />
               </div>
             </ProtectedRoute>
           }

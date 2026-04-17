@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useState } from 'react';
+import { NotificationsPanel } from './NotificationsPanel';
 import '../styles/header.css';
 
 export function Header() {
@@ -37,9 +38,13 @@ export function Header() {
           <Link to="/parts" className={`nav-link ${isActive('/parts') ? 'active' : ''}`}>
             Peças
           </Link>
+          <Link to="/reports" className={`nav-link ${isActive('/reports') ? 'active' : ''}`}>
+            Relatórios
+          </Link>
         </nav>
 
         <div className="header-right">
+          <NotificationsPanel />
           <div className="user-info">
             <span className="user-name">{user?.name}</span>
             <span className="user-role">{user?.role}</span>
