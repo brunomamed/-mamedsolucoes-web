@@ -1,7 +1,9 @@
 .stock-container {
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-lg);
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .stock-header {
@@ -13,6 +15,43 @@
 
 .stock-header h1 {
   color: var(--color-foreground);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+  transform: translateY(-2px);
 }
 
 .stock-stats {
@@ -121,4 +160,164 @@
 
 .stock-table tbody tr:hover {
   background-color: var(--color-surface);
+}
+
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.ok {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+}
+
+.status-badge.warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.status-badge.critical {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+}
+
+/* Table Columns */
+.stock-table .code {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.stock-table .description {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stock-table .category {
+  text-transform: capitalize;
+  color: var(--color-muted);
+}
+
+.stock-table .quantity {
+  text-align: center;
+  font-weight: 600;
+}
+
+.stock-table .value {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.stock-table .value-total {
+  text-align: right;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stock-table .actions {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Input for editing quantity */
+.qty-input {
+  width: 80px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.qty-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(10, 126, 164, 0.2);
+}
+
+/* Action Buttons */
+.btn-edit,
+.btn-save,
+.btn-cancel {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  transition: all 0.2s;
+  margin: 0 var(--spacing-xs);
+}
+
+.btn-edit {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-edit:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-save {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .stock-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-table {
+    min-width: 600px;
+  }
+
+  .stock-table th,
+  .stock-table td {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+
+  .qty-input {
+    width: 60px;
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+  }
+
+  .btn-edit,
+  .btn-save,
+  .btn-cancel {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    margin: 0 var(--spacing-xs);
+  }
 }

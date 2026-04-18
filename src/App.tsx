@@ -17,8 +17,8 @@ import './styles/reports.css';
 import './styles/notifications.css';
 
 function AppLayout() {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Header /> : null;
+  // Header is rendered in ProtectedRoute, no need to render here
+  return null;
 }
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {

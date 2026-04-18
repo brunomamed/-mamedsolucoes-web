@@ -134,6 +134,11 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    position: relative;
+    z-index: 101;
+  }
+
   .header-container {
     padding: var(--spacing-md);
   }
@@ -144,8 +149,8 @@
 
   .nav {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -153,6 +158,9 @@
     background: var(--color-background);
     border-bottom: 1px solid var(--color-border);
     padding: var(--spacing-lg) 0;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 99;
   }
 
   .nav.open {
@@ -163,6 +171,7 @@
     padding: var(--spacing-md) var(--spacing-2xl);
     border-bottom: none;
     border-left: 3px solid transparent;
+    cursor: pointer;
   }
 
   .nav-link.active {
@@ -177,5 +186,6 @@
 
   .menu-toggle {
     display: flex;
+    z-index: 102;
   }
 }

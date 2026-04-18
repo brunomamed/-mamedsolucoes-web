@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useState } from 'react';
+import * as React from 'react';
 import { NotificationsPanel } from './NotificationsPanel';
 import '../styles/header.css';
 
@@ -9,6 +10,11 @@ export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu when location changes
+  React.useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   const handleLogout = () => {
     logout();
@@ -26,9 +32,6 @@ export function Header() {
         </Link>
 
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-            Dashboard
-          </Link>
           <Link to="/orders" className={`nav-link ${isActive('/orders') ? 'active' : ''}`}>
             Ordens
           </Link>

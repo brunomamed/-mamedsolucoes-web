@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
 import { User, AuthResponse } from '@/types';
-import { apiClient } from '@/lib/api';
 
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
@@ -32,13 +31,32 @@ export function useAuth() {
       setLoading(true);
       setError(null);
       
-      const response: AuthResponse = await apiClient.login(email, password);
+      // Mock login for demo purposes
+      if (!email || !password) {
+        throw new Error('Email e senha são obrigatórios');
+      }
       
-      apiClient.setToken(response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
-      setUser(response.user);
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      return response;
+      // Create mock user
+      const mockUser: User = {
+        id: '1',
+        name: email.split('@')[0],
+        email,
+        role: 'admin',
+      };
+      
+      const mockToken = 'mock-token-' + Date.now();
+      
+      localStorage.setItem('auth_token', mockToken);
+      localStorage.setItem('user', JSON.stringify(mockUser));
+      setUser(mockUser);
+      
+      return {
+        token: mockToken,
+        user: mockUser,
+      } as AuthResponse;
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Login failed';
       setError(message);
@@ -53,13 +71,32 @@ export function useAuth() {
       setLoading(true);
       setError(null);
       
-      const response: AuthResponse = await apiClient.register(email, password, name);
+      // Mock registration for demo purposes
+      if (!email || !password || !name) {
+        throw new Error('Todos os campos são obrigatórios');
+      }
       
-      apiClient.setToken(response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
-      setUser(response.user);
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      return response;
+      // Create mock user
+      const mockUser: User = {
+        id: '1',
+        name,
+        email,
+        role: 'admin',
+      };
+      
+      const mockToken = 'mock-token-' + Date.now();
+      
+      localStorage.setItem('auth_token', mockToken);
+      localStorage.setItem('user', JSON.stringify(mockUser));
+      setUser(mockUser);
+      
+      return {
+        token: mockToken,
+        user: mockUser,
+      } as AuthResponse;
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Registration failed';
       setError(message);
@@ -70,8 +107,8 @@ export function useAuth() {
   }, []);
 
   const logout = useCallback(() => {
-    apiClient.logout();
     localStorage.removeItem('user');
+    localStorage.removeItem('auth_token');
     setUser(null);
   }, []);
 

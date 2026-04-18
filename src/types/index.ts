@@ -23,12 +23,12 @@ export interface ServiceOrder {
   clientAddress: string;
   briefDescription: string;
   detailedDescription: string;
+  comments?: string;
   date: string;
   time: string;
   value: number;
   photos: string[];
   parts: Part[];
-  comments: Comment[];
   status: 'pending' | 'in_progress' | 'waiting_part' | 'completed';
   createdAt: string;
   updatedAt: string;
