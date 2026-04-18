@@ -16,20 +16,20 @@ export interface Comment {
 export interface ServiceOrder {
   id: string;
   osNumber: number;
-  priority: 'alta' | 'média' | 'baixa';
+  priority?: 'alta' | 'média' | 'baixa' | 'high' | 'medium' | 'low' | 'urgent';
   category?: 'elétrica' | 'refrigeração' | 'hidráulica' | 'mecânica' | 'outros';
   clientName: string;
-  clientPhone: string;
-  clientAddress: string;
+  clientPhone?: string;
+  clientAddress?: string;
   briefDescription: string;
-  detailedDescription: string;
+  detailedDescription?: string;
   comments?: string;
-  date: string;
-  time: string;
+  date?: string;
+  time?: string;
   value: number;
-  photos: string[];
-  parts: Part[];
-  status: 'pending' | 'in_progress' | 'waiting_part' | 'completed';
+  photos?: string[];
+  parts?: Part[];
+  status?: 'pending' | 'in_progress' | 'waiting_part' | 'completed';
   createdAt: string;
   updatedAt: string;
 }

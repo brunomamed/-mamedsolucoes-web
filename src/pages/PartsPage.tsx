@@ -76,10 +76,8 @@ export function PartsPage() {
     updatePart(updatedPart.id, {
       code: updatedPart.code,
       description: updatedPart.description,
-      value: updatedPart.value,
       quantity: updatedPart.quantity,
       category: updatedPart.category,
-      photo: updatedPart.photo,
     });
     setSelectedPart(null);
   };
@@ -285,12 +283,7 @@ export function PartsPage() {
               <tbody>
                 {filteredParts.map(part => (
                   <tr key={part.id} onClick={() => handleRowClick(part)}>
-                    <td className="code">
-                      {part.photo && (
-                        <img src={part.photo} alt={part.code} className="part-thumbnail" />
-                      )}
-                      {part.code}
-                    </td>
+                    <td className="code">{part.code}</td>
                     <td>{part.description}</td>
                     <td className="category">{part.category}</td>
                     <td className="value">R$ {part.value.toFixed(2)}</td>

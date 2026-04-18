@@ -12,8 +12,8 @@ const MOCK_ORDERS: ServiceOrder[] = [
     status: 'completed',
     priority: 'high',
     value: 500,
-    createdAt: new Date('2024-04-10'),
-    updatedAt: new Date('2024-04-10'),
+    createdAt: '2024-04-10',
+    updatedAt: '2024-04-10',
   },
   {
     id: '2',
@@ -24,8 +24,8 @@ const MOCK_ORDERS: ServiceOrder[] = [
     status: 'in_progress',
     priority: 'medium',
     value: 350,
-    createdAt: new Date('2024-04-15'),
-    updatedAt: new Date('2024-04-15'),
+    createdAt: '2024-04-15',
+    updatedAt: '2024-04-15',
   },
   {
     id: '3',
@@ -36,8 +36,8 @@ const MOCK_ORDERS: ServiceOrder[] = [
     status: 'pending',
     priority: 'high',
     value: 800,
-    createdAt: new Date('2024-04-16'),
-    updatedAt: new Date('2024-04-16'),
+    createdAt: '2024-04-16',
+    updatedAt: '2024-04-16',
   },
 ];
 
@@ -110,7 +110,7 @@ export function useServiceOrders() {
             ? {
                 ...o,
                 ...orderData,
-                updatedAt: new Date(),
+                updatedAt: new Date().toISOString(),
               }
             : o
         );

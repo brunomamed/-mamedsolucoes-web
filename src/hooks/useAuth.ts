@@ -45,6 +45,7 @@ export function useAuth() {
         name: email.split('@')[0],
         email,
         role: 'admin',
+        createdAt: new Date().toISOString(),
       };
       
       const mockToken = 'mock-token-' + Date.now();
@@ -85,6 +86,7 @@ export function useAuth() {
         name,
         email,
         role: 'admin',
+        createdAt: new Date().toISOString(),
       };
       
       const mockToken = 'mock-token-' + Date.now();
